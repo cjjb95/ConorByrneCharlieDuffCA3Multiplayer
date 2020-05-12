@@ -62,6 +62,12 @@ bool TexturedWorld::loadSprites()
 				spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}
+			else if (texWorld.getPixel(i, j) == sf::Color::Cyan)
+			{
+				spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-2"));
+				spr.setPosition(i * tileSize, j * tileSize);
+				m_spriteTiles.push_back(spr);
+			}
 			// Match against other colors.
 			//else if () {}
 		}
