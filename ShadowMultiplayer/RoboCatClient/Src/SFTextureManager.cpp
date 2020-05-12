@@ -10,11 +10,18 @@ void SFTextureManager::StaticInit()
 SFTextureManager::SFTextureManager()
 {
 	CacheTexture("cat", "../Assets/cat.png");
+
 	CacheTexture("heart", "../Assets/heart.png");
 	CacheTexture("bullet", "../Assets/bullet.png");
 	CacheTexture("tile", "../Assets/tile.png");
 	CacheTexture("wood", "../Assets/wood.png");
 	CacheTexture("stone", "../Assets/stone.png");
+	CacheTexture("space", "../Assets/space.png");
+	CacheTexture("space-1", "../Assets/space-1.png");
+	CacheTexture("space-2", "../Assets/space-2.png");
+	CacheTexture("space-3", "../Assets/space-3.png");
+	CacheTexture("space-4", "../Assets/space-4.png");
+	CacheTexture("stars", "../Assets/stars.png");
 	CacheTexture("grass", "../Assets/grass.png");
 	CacheTexture("start_screen", "../Assets/start_screen.png");
 	CacheTexture("died_screen", "../Assets/died_screen.png");

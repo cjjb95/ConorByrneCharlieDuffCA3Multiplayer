@@ -23,7 +23,7 @@ std::vector<sf::Sprite>& TexturedWorld::getTexturedWorld()
 bool TexturedWorld::loadSprites()
 {
 	sf::Sprite spr;
-	int tileSize = 64;
+	int tileSize = 95;
 
 	sf::Image texWorld;
 	if (!texWorld.loadFromFile("../Assets/maps/map.png"))
@@ -31,6 +31,7 @@ bool TexturedWorld::loadSprites()
 
 	auto size = texWorld.getSize();
 	std::string texID = "";
+	int random;
 
 	for (int i = 0; i < size.x; i++)
 	{
@@ -39,25 +40,25 @@ bool TexturedWorld::loadSprites()
 			// Check for the colors.
 			if (texWorld.getPixel(i, j) == sf::Color::White)
 			{
-				spr.setTexture(*SFTextureManager::sInstance->GetTexture("tile"));
-				spr.setPosition(i * tileSize, j * tileSize);
+			spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-2"));
+			spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}
 			else if (texWorld.getPixel(i, j) == sf::Color::Blue)
 			{
-				spr.setTexture(*SFTextureManager::sInstance->GetTexture("stone"));
+				spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-1"));
 				spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}
 			else if (texWorld.getPixel(i, j) == sf::Color::Red)
 			{
-				spr.setTexture(*SFTextureManager::sInstance->GetTexture("wood"));
+				spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-3"));
 				spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
-			}
+			}		
 			else if (texWorld.getPixel(i, j) == sf::Color::Green)
 			{
-				spr.setTexture(*SFTextureManager::sInstance->GetTexture("grass"));
+				spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-2"));
 				spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}
