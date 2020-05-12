@@ -4,7 +4,7 @@ GameObject::GameObject() :
 	mIndexInWorld( -1 ),
 	mCollisionRadius( 1.f ),
 	mDoesWantToDie( false ),
-	mRotation( 0.f ),
+	mRotation( 90.f ),
 	mNetworkId( 0 ),
 	mColor( Colors::White ),
 	mScale( 1.0f )

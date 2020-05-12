@@ -25,7 +25,7 @@ uint32_t Yarn::Write( OutputMemoryBitStream& inOutputStream, uint32_t inDirtySta
 
 		Vector3 velocity = GetVelocity();
 		inOutputStream.Write( velocity.mX );
-		inOutputStream.Write( velocity.mY * 0);
+		inOutputStream.Write( velocity.mY );
 
 		inOutputStream.Write( GetRotation() );
 
