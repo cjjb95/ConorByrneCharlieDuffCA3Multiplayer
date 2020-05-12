@@ -82,6 +82,8 @@ void SFRenderManager::RenderShadows()
 
 void SFRenderManager::UpdateView()
 {
+	//sf::Time dt;
+	//float mScrollCompensation = 1.f;
 	// Lower rate means more 'lag' on the camera following the player.
 	float rate = .02f;
 	if (FindCatCentre() != sf::Vector2f(-1, -1))
@@ -89,8 +91,12 @@ void SFRenderManager::UpdateView()
 		sf::Vector2f player = FindCatCentre();
 		sf::Vector2f newCentre = view.getCenter() + ((player - view.getCenter()) * rate);
 		view.setCenter(newCentre);
+		
 	}
 	SFWindowManager::sInstance->setView(view);
+
+	
+
 }
 
 void SFRenderManager::RenderTexturedWorld()
