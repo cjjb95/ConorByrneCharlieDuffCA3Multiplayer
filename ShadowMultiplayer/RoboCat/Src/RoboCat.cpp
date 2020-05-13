@@ -48,7 +48,7 @@ void RoboCat::ProcessInput( float inDeltaTime, const InputState& inInputState )
 	mThrustDir.y = -inputForwardDelta;
 
 	
-	/*if (mThrustDir.x == 1 && mThrustDir.y == 1)
+	if (mThrustDir.x == 1 && mThrustDir.y == 1)
 		rot = NE;
 	else if (mThrustDir.x == 1 && mThrustDir.y == -1)
 		rot = NW;
@@ -63,7 +63,7 @@ void RoboCat::ProcessInput( float inDeltaTime, const InputState& inInputState )
 	else if (mThrustDir.x == 0 && mThrustDir.y == 1)
 		rot = E;
 	else if (mThrustDir.x == 0 && mThrustDir.y == -1)
-		rot = W;*/
+		rot = W;
 	
 	if (rot != -1)
 		SetRotation(rot);

@@ -28,15 +28,15 @@ SFTextureManager::SFTextureManager()
 	CacheTexture("winner_screen", "../Assets/winner_screen.png");
 
 	// Player textures.
-	CacheTexture("hitman", "../Assets/Robot1.png");
-	CacheTexture("hatman", "../Assets/Robot1.png");
-	CacheTexture("man_blue", "../Assets/Robot1.png");
-	CacheTexture("man_brown", "../Assets/Robot1.png");
-	CacheTexture("man_old", "../Assets/Robot1.png");
-	CacheTexture("robot", "../Assets/Robot1.png");
-	CacheTexture("soldier", "../Assets/Robot1.png");
-	CacheTexture("woman", "../Assets/Robot1.png");
-	CacheTexture("zombie", "../Assets/Robot1.png");
+	CacheTexture("hitman", "../Assets/Mech1.png");
+	CacheTexture("hatman", "../Assets/Mech2.png");
+	CacheTexture("man_blue", "../Assets/Mech3.png");
+	CacheTexture("man_brown", "../Assets/Mech4.png");
+	CacheTexture("man_old", "../Assets/Mech5.png");
+	CacheTexture("robot", "../Assets/Mech6.png");
+	CacheTexture("soldier", "../Assets/Mech1.png");
+	CacheTexture("woman", "../Assets/Mech2.png");
+	CacheTexture("zombie", "../Assets/Mech3.png");
 
 	// Healthbar frames.
 	CacheTexture("health10", "../Assets/healthbar/health10.png");
