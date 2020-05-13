@@ -33,7 +33,7 @@ Server::Server()
 
 	m_spawnPoints = {
 		//Vector3(128, 1088, 0),
-		Vector3(64, 448, 0),
+		Vector3(96, 448, 0),
 		//Vector3(960, 1088, 0),
 		//Vector3(1216, 1088, 0),
 		//Vector3(768, 64, 0),

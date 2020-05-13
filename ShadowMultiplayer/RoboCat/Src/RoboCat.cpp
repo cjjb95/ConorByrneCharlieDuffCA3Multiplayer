@@ -77,7 +77,7 @@ void RoboCat::AdjustVelocityByThrust( float inDeltaTime )
 	//simulating acceleration makes the client prediction a bit more complex
 	Vector3 forwardVector = GetForwardVector();
 	//mVelocity = forwardVector * (mThrustDir * inDeltaTime * mMaxLinearSpeed);
-	mVelocity = Vector3(GetForwardVector().mX + (mThrustDir.x * inDeltaTime * mMaxLinearSpeed), GetForwardVector().mY + (mThrustDir.y * inDeltaTime * mMaxLinearSpeed), GetForwardVector().mZ);
+	mVelocity = Vector3(GetForwardVector().mX + (mThrustDir.x * inDeltaTime * mMaxLinearSpeed) + 100, GetForwardVector().mY + (mThrustDir.y * inDeltaTime * mMaxLinearSpeed), GetForwardVector().mZ);
 }
 
 void RoboCat::SimulateMovement( float inDeltaTime )
