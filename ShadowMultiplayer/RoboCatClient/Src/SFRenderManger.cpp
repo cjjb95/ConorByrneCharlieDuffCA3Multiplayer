@@ -246,7 +246,7 @@ void SFRenderManager::Render()
 		SFRenderManager::sInstance->RenderComponents();
 
 		// Draw shadows
-		RenderShadows();
+		//RenderShadows();
 
 		// Draw UI elements.
 		SFRenderManager::sInstance->RenderUI();

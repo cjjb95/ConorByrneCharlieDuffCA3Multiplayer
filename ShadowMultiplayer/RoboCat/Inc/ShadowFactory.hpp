@@ -20,6 +20,6 @@ private:
 	std::vector<Line> getShadowLines();
 	void optimizeShadowCasters();
 	bool doesExitWithMapBounds(sf::FloatRect p_bounds);
-	
+
 };
 #endif

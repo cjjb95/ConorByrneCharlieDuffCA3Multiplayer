@@ -44,9 +44,9 @@ bool TexturedWorld::loadSprites()
 			spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}
-			else if (texWorld.getPixel(i, j) == sf::Color::Blue)
+			else if (texWorld.getPixel(i, j) == sf::Color::Black)
 			{
-				spr.setTexture(*SFTextureManager::sInstance->GetTexture("space-1"));
+				spr.setTexture(*SFTextureManager::sInstance->GetTexture("wall"));
 				spr.setPosition(i * tileSize, j * tileSize);
 				m_spriteTiles.push_back(spr);
 			}

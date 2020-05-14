@@ -17,7 +17,7 @@ SFTextureManager::SFTextureManager()
 	CacheTexture("wood", "../Assets/wood.png");
 	CacheTexture("stone", "../Assets/stone.png");
 	CacheTexture("space", "../Assets/space.png");
-	CacheTexture("space-1", "../Assets/space-1.png");
+	CacheTexture("wall", "../Assets/wall.png");
 	CacheTexture("space-2", "../Assets/space-2.png");
 	CacheTexture("space-3", "../Assets/space-3.png");
 	CacheTexture("space-4", "../Assets/space-4.png");
