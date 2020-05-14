@@ -23,6 +23,9 @@ private:
 	void	PickupUpdate();
 	void	SetupWorld();
 
-	std::vector<Vector3> m_spawnPoints;
-
+	std::vector<Vector3> m_team1_spawns;
+	std::vector<Vector3> m_team2_spawns;
+	int m_team1;
+	int m_team2;
+	int playersInGame;
 };
