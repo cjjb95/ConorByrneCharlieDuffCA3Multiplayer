@@ -10,8 +10,8 @@ void SoundManager::StaticInit()
 SoundManager::SoundManager()
 {
 	LoadSoundFromFile(pickup, pickupB, "../Assets/audio/Pickup.wav");
-	LoadSoundFromFile(shoot, shootB, "../Assets/audio/hit.wav");
-	LoadSoundFromFile(death, deathB, "../Assets/audio/death.wav");
+	LoadSoundFromFile(shoot, shootB, "../Assets/audio/BangBang.wav");
+	LoadSoundFromFile(death, deathB, "../Assets/audio/Fade.wav");
 	LoadSoundFromFile(join, joinB, "../Assets/audio/join.wav");
 	LoadMusicFromFile(bgMusic, "../Assets/audio/MissionTheme.ogg");
 }
