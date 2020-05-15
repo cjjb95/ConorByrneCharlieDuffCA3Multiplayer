@@ -17,7 +17,7 @@ public:
 	int	 GetComponentIndex(SFSpriteComponent* inComponent) const;
 
 	sf::Vector2f FindCatCentre();
-	sf::Vector2f getTeamScores();
+	int getTeamScores();
 
 private:
 

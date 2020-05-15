@@ -32,15 +32,22 @@ Server::Server()
 	//NetworkManagerServer::sInstance->SetSimulatedLatency( 0.5f );
 	//NetworkManagerServer::sInstance->SetSimulatedLatency( 0.1f );
 
-	m_team1_spawns = {
+	m_spawns = {
 		Vector3(100, 300, 0),
-		Vector3(100, 500, 0)
-	};	
-	
-	m_team2_spawns = {
+		Vector3(100, 500, 0),
 		Vector3(1200, 500, 0),
 		Vector3(1200, 300, 0)
-	};
+	};		
+	
+	//m_team1_spawns = {
+	//	Vector3(100, 300, 0),
+	//	Vector3(100, 500, 0)
+	//};	
+	//
+	//m_team2_spawns = {
+	//	Vector3(1200, 500, 0),
+	//	Vector3(1200, 300, 0)
+	//};
 	playersInGame = 0;
 
 }

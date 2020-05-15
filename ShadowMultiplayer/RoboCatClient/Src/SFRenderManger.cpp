@@ -229,10 +229,9 @@ void SFRenderManager::RenderComponents()
 			SFWindowManager::sInstance->draw(c->GetSprite());
 	}
 }
-sf::Vector2f SFRenderManager::getTeamScores()
+int SFRenderManager::getTeamScores()
 {
-	int team1Score = 0;
-	int team2Score = 0;
+	int playerScore = 0;
 	int playerCount = 0;
 	ScoreBoardManager::Entry* score;
 
@@ -244,17 +243,10 @@ sf::Vector2f SFRenderManager::getTeamScores()
 		{
 			RoboCat* cat = dynamic_cast<RoboCat*>(obj.get());
 			score = ScoreBoardManager::sInstance->GetEntry(cat->GetPlayerId());
-			if (score->GetPlayerId() % 2 == 0)
-			{
-				team2Score += score->GetScore();
-			}
-			else
-			{
-				team1Score += score->GetScore();
-			}
+				playerScore += score->GetScore();
 		}
 	}
-	return sf::Vector2f(team1Score, team2Score);
+	return playerScore;
 }
 bool SFRenderManager::IsWinner()
 {
@@ -344,11 +336,11 @@ void SFRenderManager::Render()
 		{
 			bool gameOver = IsWinner();
 			sf::Vector2f cats(NumberofAliveCats());
-			sf::Vector2f scores(getTeamScores());
+			int score(getTeamScores());
 
 			//Dylan - Displays game over screen if there are no players on one team
 			//Dylan - additional check to stop winner screen displaying on game startup -> at least one point must be scored to win
-			if (gameOver == true && (scores.x > 0 || scores.y > 0))
+			if (gameOver == true && (score > 0 ))
 			{
 				// Draw some you are the winner screen.
 				sf::Vector2f winner(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
