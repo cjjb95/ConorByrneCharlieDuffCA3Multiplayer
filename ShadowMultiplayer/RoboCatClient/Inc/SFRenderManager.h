@@ -17,6 +17,7 @@ public:
 	int	 GetComponentIndex(SFSpriteComponent* inComponent) const;
 
 	sf::Vector2f FindCatCentre();
+	sf::Vector2f getTeamScores();
 
 private:
 
@@ -37,4 +38,7 @@ private:
 	sf::Sprite m_diedScreen;
 	sf::Sprite m_winnerScreen;
 	sf::Vector2f m_lastCatPos;
+
+	bool hasWrittenScore;
+	bool IsWinner();
 };

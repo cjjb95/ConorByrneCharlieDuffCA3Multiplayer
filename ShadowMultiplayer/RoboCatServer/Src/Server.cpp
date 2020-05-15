@@ -135,13 +135,11 @@ void Server::SpawnCatForPlayer( int inPlayerId )
 	int randomIndex = rand() % m_team1_spawns.size();
 	if(playersInGame % 2 == 0)
 	{ 
-		std::cout << "Players in Game: " << playersInGame << std::endl;
 		cat->SetLocation(m_team2_spawns[randomIndex]);
 		m_team2++;
 	}
 	else
 	{
-		std::cout << "Players in Game: " << playersInGame << std::endl;
 		cat->SetLocation(m_team1_spawns[randomIndex]);
 		m_team1++;
 	}
