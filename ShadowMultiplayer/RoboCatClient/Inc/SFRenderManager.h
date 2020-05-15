@@ -44,5 +44,4 @@ private:
 	bool IsWinner();
 	bool gameOver = IsWinner();
 	bool TimeWritten = IsWinner();
-	bool writeOnce = false;
 };

@@ -39,14 +39,12 @@ void SFRenderManager::RenderUI()
 	string timeString = StringUtils::Sprintf(" Survival Time : %i ", timeOnScreen);
 	timeElapsed.setString(timeString);
 
-	if (TimeWritten == true && writeOnce == false)
+	if (TimeWritten == true)
 	{
 		int highTime = (int)timeOnScreen;
 		std::ofstream outputFile("../Assets/Saved/SurvivalScores.txt");
 		outputFile << "Survival Time: " << highTime;
 		outputFile.close();
-		
-		writeOnce = true;
 	}
 
 	SFWindowManager::sInstance->draw(timeElapsed);
