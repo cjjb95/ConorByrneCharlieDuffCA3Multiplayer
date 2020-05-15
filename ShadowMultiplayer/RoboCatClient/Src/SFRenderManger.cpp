@@ -21,6 +21,34 @@ void SFRenderManager::RenderUI()
 
 	sf::Vector2f basePos(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
 
+
+	//Charlie - time elapsed code
+
+	sf::Time elapsed1 = clock.getElapsedTime();
+	sf::Text timeElapsed;
+	
+	
+	timeElapsed.setPosition(basePos.x + 20, basePos.y + 50);
+	timeElapsed.setFont(bebas);
+	timeElapsed.setCharacterSize(24);
+	timeElapsed.setFillColor(sf::Color::Blue);
+	sf::Int32 timeOnScreen = elapsed1.asSeconds();
+	string timeString = StringUtils::Sprintf(" Survival Time : %i ", timeOnScreen);
+	timeElapsed.setString(timeString);
+
+	if (TimeWritten == true && writeOnce == false)
+	{
+		int highTime = (int)timeOnScreen;
+		std::ofstream outputFile("../Assets/Saved/SurvivalScores.txt");
+		outputFile << "Survival Time: " << highTime;
+		outputFile.close();
+		
+		writeOnce = true;
+	}
+
+	SFWindowManager::sInstance->draw(timeElapsed);
+
+
 	RTT.setPosition(basePos.x + 20, basePos.y + 20);
 	InOut.setPosition(basePos.x + 120, basePos.y + 20);
 
@@ -362,7 +390,7 @@ void SFRenderManager::Render()
 					//Add an additional point for winning
 					fileScore++;
 					std::ofstream outputFile("../Assets/Saved/Scores.txt");
-					outputFile << fileScore;
+					outputFile << "Players Killed: " << fileScore;
 					outputFile.close();
 					//Dylan - stops score being written over and over
 					hasWrittenScore = true;

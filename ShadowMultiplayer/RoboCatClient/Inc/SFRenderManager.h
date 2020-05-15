@@ -18,6 +18,7 @@ public:
 
 	sf::Vector2f FindCatCentre();
 	int getTeamScores();
+	sf::Clock clock;
 
 private:
 
@@ -41,4 +42,7 @@ private:
 
 	bool hasWrittenScore;
 	bool IsWinner();
+	bool gameOver = IsWinner();
+	bool TimeWritten = IsWinner();
+	bool writeOnce = false;
 };
