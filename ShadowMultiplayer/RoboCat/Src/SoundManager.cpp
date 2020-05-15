@@ -13,7 +13,7 @@ SoundManager::SoundManager()
 	LoadSoundFromFile(shoot, shootB, "../Assets/audio/hit.wav");
 	LoadSoundFromFile(death, deathB, "../Assets/audio/death.wav");
 	LoadSoundFromFile(join, joinB, "../Assets/audio/join.wav");
-	LoadMusicFromFile(bgMusic, "../Assets/audio/background.wav");
+	LoadMusicFromFile(bgMusic, "../Assets/audio/MissionTheme.ogg");
 }
 
 void SoundManager::LoadSoundFromFile(sf::Sound &p_sound, sf::SoundBuffer &p_buffer, string p_file)
