@@ -382,9 +382,8 @@ void SFRenderManager::Render()
 			sf::Vector2f died(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
 			m_diedScreen.setPosition(died);
 			SFWindowManager::sInstance->draw(m_diedScreen);
-
+			//The below code was gotten from Dylan Reilly
 			if (hasWrittenScore == false) {
-				//Dylan - Writes score to file on game death
 				//Done on the client side as there is no need to pass this information over the network
 				ScoreBoardManager::Entry* score = ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId());
 				std::ifstream inputFile;
@@ -397,7 +396,6 @@ void SFRenderManager::Render()
 				std::ofstream outputFile("../Assets/Saved/Scores.txt");
 				outputFile << fileScore;
 				outputFile.close();
-				//Dylan - stops score being written over and over
 				hasWrittenScore = true;
 			}
 
@@ -408,8 +406,6 @@ void SFRenderManager::Render()
 			sf::Vector2f cats(NumberofAliveCats());
 			int score(getTeamScores());
 
-			//Dylan - Displays game over screen if there are no players on one team
-			//Dylan - additional check to stop winner screen displaying on game startup -> at least one point must be scored to win
 			if (gameOver == true && (score > 0 ))
 			{
 				// Draw some you are the winner screen.
@@ -419,8 +415,6 @@ void SFRenderManager::Render()
 				SoundManager::sInstance->PauseMusic();
 				SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Victory);
 				if (hasWrittenScore == false) {
-					//Dylan - Writes score to file on win
-					//Done on the client side as there is no need to pass this information over the network
 					ScoreBoardManager::Entry* score = ScoreBoardManager::sInstance->GetEntry(NetworkManagerClient::sInstance->GetPlayerId());
 					std::ifstream inputFile;
 					int fileScore;
@@ -434,7 +428,6 @@ void SFRenderManager::Render()
 					std::ofstream outputFile("../Assets/Saved/Scores.txt");
 					outputFile << "Players Killed: " << fileScore;
 					outputFile.close();
-					//Dylan - stops score being written over and over
 					hasWrittenScore = true;
 				}
 			}

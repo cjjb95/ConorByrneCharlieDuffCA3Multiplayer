@@ -1,4 +1,5 @@
 #include <RoboCatServerPCH.h>
+#include <iostream>
 
 NetworkManagerServer* NetworkManagerServer::sInstance;
 
