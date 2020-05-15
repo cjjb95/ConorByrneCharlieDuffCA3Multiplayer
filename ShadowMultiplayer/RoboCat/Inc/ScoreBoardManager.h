@@ -16,7 +16,7 @@ public:
 		uint32_t		GetPlayerId()	const	{ return mPlayerId; }
 		const string&	GetPlayerName()	const	{ return mPlayerName; }
 		const string&	GetFormattedNameScore()	const	{ return mFormattedNameScore; }
-		int				GetScore()		const	{ return mScore; }
+		int	            GetScore()		const	{ return mScore; }
 
 		void			SetScore( int inScore );
 

@@ -21,6 +21,9 @@ void SFRenderManager::RenderUI()
 
 	sf::Vector2f basePos(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
 
+#pragma region TimeCode
+
+
 
 	//Charlie - time elapsed code
 
@@ -28,7 +31,7 @@ void SFRenderManager::RenderUI()
 	sf::Text timeElapsed;
 	
 	
-	timeElapsed.setPosition(basePos.x + 20, basePos.y + 50);
+	timeElapsed.setPosition(basePos.x + 20, basePos.y + 40);
 	timeElapsed.setFont(bebas);
 	timeElapsed.setCharacterSize(24);
 	timeElapsed.setFillColor(sf::Color::Blue);
@@ -47,6 +50,62 @@ void SFRenderManager::RenderUI()
 	}
 
 	SFWindowManager::sInstance->draw(timeElapsed);
+#pragma endregion
+
+
+#pragma region Scoreboard
+//Reference to kerrie and sean for sharing this code with us.
+//code base uses a mix of sfRenderManager and so code from HUD.cpp
+	sf::Text playerName; 
+	playerName.setFillColor(sf::Color::Green);
+	playerName.setCharacterSize(24);
+	playerName.setFont(bebas);
+
+
+	sf::Text playerList;
+	playerList.setFillColor(sf::Color::Yellow);
+	playerList.setCharacterSize(24);
+	playerList.setFont(bebas);
+
+
+	sf::Text playerScore;
+	playerScore.setFillColor(sf::Color::Red);
+	playerScore.setCharacterSize(24);
+	playerScore.setFont(bebas);
+
+
+	playerList.setPosition(basePos.x + 20, basePos.y + 70);
+	playerList.setString("Player List -");
+	SFWindowManager::sInstance->draw(playerList);
+
+	const vector< ScoreBoardManager::Entry >& entries = ScoreBoardManager::sInstance->GetEntries();
+	//player names
+	playerName.setPosition(basePos.x + 20, basePos.y + 100);
+	float yoffset = 10;
+	for (const auto& entry : entries) 
+	{
+		playerName.setString(entry.GetPlayerName());
+		SFWindowManager::sInstance->draw(playerName);
+		yoffset += 20;
+		playerName.setPosition(basePos.x + 20, basePos.y + 100 + yoffset);
+
+	}
+
+	//player score
+	playerScore.setPosition(basePos.x + 50, basePos.y + 100);
+	for (const auto& entry : entries)
+	{
+		//playerScore.setString( entry.GetScore() );
+		SFWindowManager::sInstance->draw(playerScore);
+		yoffset += 20;
+		playerScore.setPosition(basePos.x + 50, basePos.y + 100 + yoffset);
+
+	}
+
+	
+
+#pragma endregion
+
 
 
 	RTT.setPosition(basePos.x + 20, basePos.y + 20);
