@@ -14,6 +14,7 @@ SoundManager::SoundManager()
 	LoadSoundFromFile(death, deathB, "../Assets/audio/Fade.wav");
 	LoadSoundFromFile(join, joinB, "../Assets/audio/join.wav");
 	LoadMusicFromFile(bgMusic, "../Assets/audio/MissionTheme.ogg");
+	LoadSoundFromFile(victory, victoryB, "../Assets/audio/Victory.wav");
 }
 
 void SoundManager::LoadSoundFromFile(sf::Sound &p_sound, sf::SoundBuffer &p_buffer, string p_file)
@@ -35,6 +36,13 @@ void SoundManager::LoadMusicFromFile(sf::Music &p_music, string p_file)
 void SoundManager::PlayMusic()
 {
 	bgMusic.play();
+	
+}
+
+void SoundManager::PauseMusic()
+{
+	bgMusic.pause();
+
 }
 
 void SoundManager::PlaySound(SoundToPlay p_sound)
@@ -55,6 +63,10 @@ void SoundManager::PlaySound(SoundToPlay p_sound)
 	case SoundManager::STP_Join:
 		join.setRelativeToListener(true);
 		join.play();
+		break;
+	case SoundManager::STP_Victory:
+		victory.setRelativeToListener(true);
+		victory.play();
 		break;
 	}
 }

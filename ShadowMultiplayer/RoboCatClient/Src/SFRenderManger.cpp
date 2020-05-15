@@ -286,6 +286,7 @@ bool SFRenderManager::IsWinner()
 	}
 	else
 	{
+		
 		return true;
 	}
 }
@@ -353,7 +354,8 @@ void SFRenderManager::Render()
 				sf::Vector2f winner(view.getCenter().x - view.getSize().x / 2, view.getCenter().y - view.getSize().y / 2);
 				m_winnerScreen.setPosition(winner);
 				SFWindowManager::sInstance->draw(m_winnerScreen);
-
+				SoundManager::sInstance->PauseMusic();
+				SoundManager::sInstance->PlaySound(SoundManager::SoundToPlay::STP_Victory);
 				if (hasWrittenScore == false) {
 					//Dylan - Writes score to file on win
 					//Done on the client side as there is no need to pass this information over the network
