@@ -55,7 +55,7 @@ void SFRenderManager::RenderUI()
 
 #pragma region Scoreboard
 //Reference to kerrie and sean for sharing this code with us.
-//code base uses a mix of sfRenderManager and so code from HUD.cpp
+
 	sf::Text playerName; 
 	playerName.setFillColor(sf::Color::Green);
 	playerName.setCharacterSize(24);
@@ -68,39 +68,24 @@ void SFRenderManager::RenderUI()
 	playerList.setFont(bebas);
 
 
-	sf::Text playerScore;
-	playerScore.setFillColor(sf::Color::Red);
-	playerScore.setCharacterSize(24);
-	playerScore.setFont(bebas);
-
-
 	playerList.setPosition(basePos.x + 20, basePos.y + 70);
-	playerList.setString("Player List -");
+	playerList.setString("Player List:");
 	SFWindowManager::sInstance->draw(playerList);
 
 	const vector< ScoreBoardManager::Entry >& entries = ScoreBoardManager::sInstance->GetEntries();
-	//player names
+	//player names and Score
 	playerName.setPosition(basePos.x + 20, basePos.y + 100);
 	float yoffset = 10;
 	for (const auto& entry : entries) 
 	{
-		playerName.setString(entry.GetPlayerName());
+		playerName.setString(entry.GetFormattedNameScore());
 		SFWindowManager::sInstance->draw(playerName);
-		yoffset += 20;
+		yoffset += 60;
 		playerName.setPosition(basePos.x + 20, basePos.y + 100 + yoffset);
 
 	}
 
-	//player score
-	playerScore.setPosition(basePos.x + 50, basePos.y + 100);
-	for (const auto& entry : entries)
-	{
-		//playerScore.setString( entry.GetScore() );
-		SFWindowManager::sInstance->draw(playerScore);
-		yoffset += 20;
-		playerScore.setPosition(basePos.x + 50, basePos.y + 100 + yoffset);
-
-	}
+	
 
 	
 

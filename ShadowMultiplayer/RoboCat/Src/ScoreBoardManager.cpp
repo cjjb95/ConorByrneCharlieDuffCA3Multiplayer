@@ -31,12 +31,13 @@ mColor( inColor )
 	SetScore( 0 );
 }
 
+//Charlie - Formated to look cleaner
 void ScoreBoardManager::Entry::SetScore( int32_t inScore )
 {
 	mScore = inScore;
 
 	char	buffer[ 256 ];
-	snprintf( buffer, 256, "%s %i", mPlayerName.c_str(), mScore );
+	snprintf( buffer, 256, "Player: %s\nScore: %i\n", mPlayerName.c_str(), mScore );
 	mFormattedNameScore = string( buffer );
 
 }
